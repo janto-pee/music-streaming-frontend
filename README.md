@@ -89,23 +89,24 @@ We'll be building a fullstack project, therefore we'll be using alot of technolo
 
 ### Built With
 
-* Project Day 1: FIGMA TO TEMPLATE
+* Project Day 1: Figma to template
 
-* Project Day 2: STATE MANAGEMENT
+* Project Day 2: State management
 
-* Project Day 3: FORM AUTHENTICATION| SIGN-UP & SIGN IN
+* Project Day 3: Form Authentication | Sign In & Sign Up
 
-* Project Day 4: VUE ROUTER
+* Project Day 4: Vue Router
 
-* Project Day 5: MUSIC UPLOAD
+* Project Day 5: Music Upload
 
-* Project Day 6: PLAYING MUSIC
+* Project Day 6: Fetching Music
 
-* Project Day 7: PERFORMANCE & OPTIMIZATION
+* Project Day 7: Performance & Optimization
 
-* Project Day 8: TESTING
+* Project Day 8: Testing
 
-* Project Day 9: DEPLOYMENT
+* Project Day 9: Deployment
+
 
 
 <!-- GETTING STARTED -->
@@ -125,7 +126,7 @@ This is an example of how to list things you need to use the software and how to
 
 _Below are steps on how to run your first vue development server._
 
-1. Start with vith [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) or
+1. Start with [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) or
 2. Clone the repo
    ```sh
    git clone https://github.com/janto-pee/Music-Streaming-Project"
