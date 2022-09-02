@@ -1,31 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/janto-pee/Music-Streaming-Project/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -103,23 +76,13 @@ Build a scalable Vue application and deploy to production File Uploads, Drag and
 We'll be building a fullstack project, therefore we'll be using alot of technologies on both the frontend and backend 
 
 * [![Vue][Vue.js]][Vue-url]
-* [![Docker][Docker.com]][Docker-url]
-* [![Nuxt][Nuxt.com]][Nuxt-url]
-* [![Firebase][Firebase.com]][Firebase-url]
-* [![Tailwindcss][Tailwindcss.com]][Tailwindcss-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-<!-- <div style="display:flex;flex-direction:column">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node-dot-js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
-  <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&labelColor=black&logo=Docker" />
-  <img src="https://img.shields.io/badge/-Webpack-8DD6F9?style=flat-square&labelColor=black&logo=webpack" />
-  <img src="https://img.shields.io/badge/-Firebase-e69514?style=flat-square&labelColor=black&logo=firebase" />
-  <img src="https://img.shields.io/badge/-Amazon_AWS-232F3E?style=flat-square&labelColor=black&logo=AmazonAWS" />
-  <img src="https://img.shields.io/badge/-Netlify-00C7B7?style=flat-square&labelColor=black&logo=Netlify" />
-  <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&labelColor=black&logo=typescript" />
-</div> -->
+* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+* ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+* ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+* ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+* ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+* ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+* ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
