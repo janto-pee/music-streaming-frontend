@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/janto-pee/Music-Streaming-Project">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="160" height="80">
   </a>
 
   <h3 align="center">Music Streaming Project</h3>
@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/janto-pee/Music-Streaming-Project)
+[![Product Name Screen Shot][screenshot]](https://github.com/janto-pee/Music-Streaming-Project)
 
 Think of an app like Audiomack or Spotify. In this vuejs project, we'll be building a large-scale Vue applications from scratch. you'll master the basics of vuejs and proceed to more advanced concept. This is not a dummy project, this project will be shipped for usage by millions of music lovers. So its a highly scalable enterprise level application. At the end of this project, you'll have mastered all you need to be a top vuejs developer.
 
@@ -102,15 +102,15 @@ Build a scalable Vue application and deploy to production File Uploads, Drag and
 
 We'll be b.uilding a fullstack project, therefore we'll be using alot of technologies on both the frontend and backend 
 
-<!-- * [![Vue][Vue.js]][Vue-url]
+* [![Vue][Vue.js]][Vue-url]
 * [![Docker][Docker.com]][Docker-url]
 * [![Nuxt][Nuxt.com]][Nuxt-url]
 * [![Firebase][Firebase.com]][Firebase-url]
 * [![Tailwindcss][Tailwindcss.com]][Tailwindcss-url]
 * [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url] -->
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-<div style="display:flex;flex-direction:column">
+<!-- <div style="display:flex;flex-direction:column">
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node-dot-js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&labelColor=black&logo=Docker" />
@@ -119,7 +119,7 @@ We'll be b.uilding a fullstack project, therefore we'll be using alot of technol
   <img src="https://img.shields.io/badge/-Amazon_AWS-232F3E?style=flat-square&labelColor=black&logo=AmazonAWS" />
   <img src="https://img.shields.io/badge/-Netlify-00C7B7?style=flat-square&labelColor=black&logo=Netlify" />
   <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&labelColor=black&logo=typescript" />
-</div>
+</div> -->
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
