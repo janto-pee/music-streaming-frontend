@@ -56,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![screenshot][screenshot]](./images/screenshot.png)
+![screenshot](images/screenshot.png)
 
 Think of an app like Audiomack or Spotify on the web. In this vuejs project, we'll be building a large-scale Vue application from scratch. you'll master the basics of vuejs and proceed to more advanced concept. This is not a dummy project, this project will be shipped for usage by millions of music lovers. So its a highly scalable enterprise level application. At the end of this project, you'll have mastered all you need to be a top vuejs developer.
 
