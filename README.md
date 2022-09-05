@@ -58,20 +58,20 @@
 
 [![screenshot][screenshot]](https://github.com/janto-pee/Music-Streaming-Project)
 
-Think of an app like Audiomack or Spotify. In this vuejs project, we'll be building a large-scale Vue applications from scratch. you'll master the basics of vuejs and proceed to more advanced concept. This is not a dummy project, this project will be shipped for usage by millions of music lovers. So its a highly scalable enterprise level application. At the end of this project, you'll have mastered all you need to be a top vuejs developer.
+Think of an app like Audiomack or Spotify on the web. In this vuejs project, we'll be building a large-scale Vue application from scratch. you'll master the basics of vuejs and proceed to more advanced concept. This is not a dummy project, this project will be shipped for usage by millions of music lovers. So its a highly scalable enterprise level application. At the end of this project, you'll have mastered all you need to be a top vuejs developer.
 
 Here are some things you'll be learning:
 * Vue Essentials: Template Syntax, Reactivity Fundamentals, Computed Properties,Class and Style Bindings, Conditional Rendering, List Rendering, Event Handling, Form Input Bindings, Lifecycle Hooks, Watchers and more..
 * Modular Component structure:  Registration, Props, Events, Fallthrough Attributes, Slots, Provide / inject, Async Components
 * Libraries and Plugins: Webpack, Babel, Eslint, Vee-validate, Firebase...
 
-Build a scalable Vue application and deploy to production File Uploads, Drag and drop support Testing, PWAs, Internationalization, Form Authentication with Vue and vee-validate Firebase integration, Firestore, Auth, and Cloud Storage TailwindCSS integration State management Performance and scalablity tradeoffs Routing with Vue Router Testing
+You'll learn how to implement features such as File Uploads, Drag and drop support, Testing, PWAs, Internationalization, Form Authentication with Vue and vee-validate Firebase integration, Firestore, Auth, and Cloud Storage TailwindCSS integration State management Performance and scalablity tradeoffs Routing with Vue Router Testing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+### Technologies we'll use
 
 We'll be building a fullstack project, therefore we'll be using alot of technologies on both the frontend and backend 
 
@@ -87,7 +87,7 @@ We'll be building a fullstack project, therefore we'll be using alot of technolo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### Project Timeline
 
 * Project Day 1: Figma to template
 
@@ -145,7 +145,7 @@ _Below are steps on how to run your first vue development server._
 
 
 <!-- USAGE EXAMPLES -->
-## Timeline
+## Duration
 
 This project will commence on the 12th of September and be completed by 21st of same month. All resources will be made accessible to everyone.
 
