@@ -113,6 +113,7 @@ We'll be building a fullstack project, therefore we'll be using alot of technolo
 
 <!-- GETTING STARTED -->
 ## Getting Started
+Join project on discord: https://discord.gg/gmEQjRdj
 
 We'll be using Vite to scaffold our app. Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 
@@ -149,11 +150,12 @@ _Below are steps on how to run your first vue development server._
 <!-- USAGE EXAMPLES -->
 ## Duration
 
-This project will commence on the 12th of September and be completed by 21st of same month. All resources will be made accessible to everyone.
+This project will commence on the 11th of September and be completed by 21st of same month. All resources will be made accessible to everyone.
 
 _For more details, Dont hesitate to contact me [Linkedin](https://linkedin.com/in/adejumo-ayobami-347bb9227)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+Project link: https://discord.gg/gmEQjRdj
 
 
 
