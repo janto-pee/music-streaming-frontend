@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs Introduction</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="mx-4">
+        <h1 class="bg-blue-500 text-lg text-white">My name is {{ lastName }} {{firstName}}</h1>
+        <p class="my-4" >I am {{ age }} years old</p>
+        <div>
+            <p class="my-4" v-if="!educated">I can read and write</p>
+            <p class="my-4" v-else >I can't read and write</p>
+        </div>
+
+
+        <div :style="
+        {fontSize: '24px', border: '1px solid black'}"
+        > Getting started with vuejs</div>
+
+
+
+        <div :class="
+        {'text-green-400': educated, 'text-red-600': !educated }">This is style binding</div>
+
+
+
+        <button @click="increaseAge" :disabled="inSubmission" :class="{'text-white-400 bg-pink-400': inSubmission}" class="px-8 py-2 bg-blue-400 text-white mr-4">Increase Age</button>
+
+        <button :disabled="inSubmission" @click="submitForm" class="px-8 py-2 bg-red-400 text-white">Decrease Age</button>
+
+        <div class="flex flex-col" v-for="item in softwareStacks">
+            <li>
+                <div>
+                    <h1 :class="{'text-blue-400': item.stack=='Python'}">{{ item.platform }}</h1>
+                    <small>{{ item.framework }}</small>
+                </div>
+            </li>
+        </div>
+
+        <div>
+            <p class="mt-4">The firstName is {{ firstName }}</p>
+            <input type="text" class="border p-4 " v-model="firstName">
+            
+            <button @click="submitForm" class="px-8 py-2 mt-2 bg-red-400 text-white">Decrease Age</button>
+        </div>
+
+
+
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
