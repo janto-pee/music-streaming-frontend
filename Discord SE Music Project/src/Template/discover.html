@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendyBeats Music Streaming </title>
+    <!-- links -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./main.js"></script>      
+</head>
+<body class="bg-color-light-bg">
+    <!-- Navigation -->
+    <nav class="bg-white px-4 sm:px-8 py-4 border-b border-1 fixed top-0 left-0 right-0 h-16 z-10">
+      <div class="flex justify-between items-center gap-4 h-full">
+        <!-- Left Navigation -->
+        <div class="basis-3/6 md:basis-64">
+          <div class="flex items-center gap-2 sm:gap-4">
+            <i class="bi bi-soundwave text-color-secondary text-lg sm:text-2xl md:text-3xl"></i>
+            <a href="#" class="text-lg  md:text-xl font-semibold">Waveme</a>
+          </div>
+        </div>
+        <!-- Center Navigation -->
+        <div class="hidden md:flex basis-auto px-2 w-full">
+          <div class="m-auto flex justify-between items-center bg-color-light-bg gap-2 px-4 py-2 rounded-3xl w-9/12">
+            <input type="text" placeholder="search..." class="bg-transparent w-full bg-bue-500">
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <!-- Right Navigation -->
+        <div class="hidden md:flex justify-end basis-2/6 md:basis-96">
+            <div class="flex items-center justify-end gap-4">
+              <i class="fas fa-magnifying-glass md:hidden text-sm"></i>
+              <span class="hidden">Adejumo</span>
+              <img src="./assets/img/profile.png" alt="" class="rounded-full w-8 h-8 border-2 hidden">
+              <button class="hidden sm:flex text-sm">Sign In</button>
+              <button class="px-4 py-2 bg-color-secondary text-color-white hidden md:flex">Sign Up</button>
+              <button class="rounded-full bg-color-secondary text-color-white md:hidden px-2">
+                <i class="fa fa-user text-color-white text-sm"></i>
+              </button>
+            </div>
+        </div>
+
+        <!-- mobile menu -->
+        <i class="fas fa-bars text-md sm:text-xl md:text-xl md:hidden"></i>
+        <div class="hidden">
+          <div class="absolute top-0 right-0 z-30 bg-color-secondary h-screen w-1/2">
+            <div class="flex items-center justify-end">
+              <i class="fas fa-xmark text-2xl text-color-white my-8 px-8"></i>
+            </div>
+            <div class="px-4">
+              <div>
+                <p class="mb-2 text-color-light-text">Browse</p>
+                <ul class="text-color-white">
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4" href="/index.html">
+                      <i class="fa fa-up-right-from-square"></i>
+                      <span class="text-[14px] font-[400]">New Release</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4" href="/discover.html">
+                      <i class="fa fa-compact-disc "></i>
+                      <span class="text-[14px] font-[400]">Discover</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4">
+                      <i class="fab fa-edge"></i>
+                      <span class="text-[14px] font-[400]">Manage</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4" href="/Popular.html">
+                      <i class="fas fa-arrow-trend-up "></i>
+                      <span class="text-[14px] font-[400]">Popular</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4" href="/charts.html">
+                      <i class="fas fa-chart-simple"></i>
+                      <span class="text-[14px] font-[400]">Charts</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4" href="/Podcast.html">
+                      <i class="fa fa-radio "></i>
+                      <span class="text-[14px] font-[400]">Podcast</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p class="my-4 text-color-light-text">Library</p>
+                <ul class="text-color-white">
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4">
+                      <i class="fas fa-arrow-trend-up "></i>
+                      <span class="text-[14px] font-[400]">Stream</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4">
+                      <i class="fas fa-chart-simple"></i>
+                      <span class="text-[14px] font-[400]">Playlist</span>
+                    </a>
+                  </li>
+                  <li class="my-4">
+                    <a class="flex items-center cursor-pointer gap-4">
+                      <i class="fa fa-radio "></i>
+                      <span class="text-[14px] font-[400]">Likes</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex justify-between items-center bg-color-light-bg gap-2 px-2 rounded-lg">
+                <input type="text" placeholder="search..." class="bg-transparent w-full bg-bue-500">
+                <i class="fas fa-magnifying-glass"></i>
+              </div>
+              <div class="flex items-center gap-4 my-4">
+                <button class="hidden sm:flex text-sm">Sign In</button>
+                <button class="px-4 py-2 bg-color-gray-deep text-color-white">Sign Up</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- main -->
+    <section class="relative top-16">
+      <!-- aside -->
+      <div class="hidden md:block fixed w-48 top-16 px-4 sm:px-8 bg-white py-6 h-full">
+        <div>
+          <p class="mb-2 text-color-light-text">Browse</p>
+          <ul class="ml-2">
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="./index.html">
+                <i class="fa fa-house text-color-secondary w-4"></i>
+                <span class="text-[14px] font-bold">Home</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="/discover.html">
+                <i class="fab fa-cc-discover text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Discover</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="/Manage.html">
+                <i class="fas fa-clone text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Manage</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="/Popular.html">
+                <i class="fas fa-arrow-trend-up text-red-400  w-4"></i>
+                <span class="text-[14px] font-[400]">Popular</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="/charts.html">
+                <i class="fas fa-chart-simple text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Charts</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4" href="/Podcast.html">
+                <i class="fa fa-radio text-red-400  w-4"></i>
+                <span class="text-[14px] font-[400]">Podcast</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="my-4 text-color-light-text">Library</p>
+          <ul class="ml-2">
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4">
+                <i class="fas fa-arrow-trend-up text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Stream</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4">
+                <i class="fas fa-chart-simple text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Playlist</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <a class="flex items-center cursor-pointer gap-4">
+                <i class="fa fa-radio text-red-400 w-4"></i>
+                <span class="text-[14px] font-[400]">Likes</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- aside footer -->
+        <ul class="fixed left-0 bottom-0 px-8 flex flex-col gap-4">
+          <li class="">
+            <a href="">About Us</a>
+          </li>
+          <li class="">
+            <a href="">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <!-- contents -->
+      <div class="relative w-full px-4 sm:px-8 md:w-[calc(100%-12rem)] md:left-48 md:px-16 py-8">
+        <!-- Featured -->
+        <h1 class="text-2xl font-semibold pt-2 pb-4">Featured</h1>
+        <div class="w-full gap-6 my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+          <div class="rounded-md hover-sho relative bg-[url(./assets/img/featured/Artboard-30.png)] bg-cover bg-no-repeat bg-center">
+            <div class="hidden hover:cursor-pointer hover:flex absolute  left-4 bottom-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-semibold text-white">Harpille</h3>
+                <p class="text-sm text-white">Marshmello & Harpellie</p>
+              </div>
+              <button class="mr-auto"><i class="fas fa-circle-play text-3xl hover:text-color-white"></i></button>
+            </div>
+          </div>
+          <div class="card1">
+            <img src="./assets/img/Artboard-30.png" alt="">
+          </div>
+          <div class="card1">
+            <img src="./assets/img/Artboard-30.png" alt="">
+          </div>
+          <div class="card1">
+            <img src="./assets/img/Artboard-30.png" alt="">
+          </div>
+        </div>
+        <!-- Recommended For You -->
+        <h1 class="text-2xl font-semibold pt-6">Recommended For You</h1>
+        <div class="w-full gap-6 my-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/recommended/Artboard-39.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/recommended/Artboard-42.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/recommended/Artboard-56.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/recommended/Artboard-57.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/recommended/Artboard-62.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radio For You -->
+        <h1 class="text-2xl font-semibold pt-6">Online Radio</h1>
+        <div class="w-full gap-6 my-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/online-radio/Artboard-37.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <!--  -->
+          <div class="border border-2 relative">
+            <img src="./assets/img/online-radio/Artboard-44.png" alt="">
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+            <div class="hidden absolute w-full h-full top-0 left-0 bg-gradient-to-r from-pink-500 to-yellow-500">
+              <button class="mr-auto relative top-1/2 left-20 text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/online-radio/Artboard-50.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/online-radio/Artboard-58.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/online-radio/Artboard-61.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Users -->
+        <h1 class="text-2xl font-semibold pt-6">Verified Users</h1>
+        <div class="gap-6 my-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="border border-2 relative p-4 rounded-xl bg-white">
+            <img src="./assets/img/people/Adam-Stefancik_avatar-200x200.jpg" alt="" class="rounded-full">
+            <div class="flex flex-col gap-2 mt-4 items-center">
+              <h3 class="text md text-color-text">Ayomide Lara</h3>
+              <button class="px-2 rounded-xl text-sm border border-color-secondary">Chat with</button>
+            </div>
+          </div>
+          <div class="border border-2 relative p-4 rounded-xl bg-white">
+            <img src="./assets/img/people/Daria-Shevtsova_avatar-200x200.jpg" alt="" class="rounded-full">
+            <div class="flex flex-col gap-2 mt-4 items-center">
+              <h3 class="text md text-color-text">Ayomide Lara</h3>
+              <button class="px-2 rounded-xl text-sm border border-color-secondary">Chat with</button>
+            </div>
+          </div>
+          <div class="border border-2 relative p-4 rounded-xl bg-white">
+            <img src="./assets/img/people/Jack-Orison_avatar-200x200.jpg" alt="" class="rounded-full">
+            <div class="flex flex-col gap-2 mt-4 items-center">
+              <h3 class="text md text-color-text">Ayomide Lara</h3>
+              <button class="px-2 rounded-xl text-sm border border-color-secondary">Chat with</button>
+            </div>
+          </div>
+          <div class="border border-2 relative p-4 rounded-xl bg-white">
+            <img src="./assets/img/people/Marlene-Leppanen_avatar-200x200.jpg" alt="" class="rounded-full">
+            <div class="flex flex-col gap-2 mt-4 items-center">
+              <h3 class="text md text-color-text">Ayomide Lara</h3>
+              <button class="px-2 rounded-xl text-sm border border-color-secondary">Chat with</button>
+            </div>
+          </div>
+          <div class="border border-2 relative p-4 rounded-xl bg-white">
+            <img src="./assets/img/people/Adam-Stefancik_avatar-200x200.jpg" alt="" class="rounded-full">
+            <div class="flex flex-col gap-2 mt-4 items-center">
+              <h3 class="text md text-color-text">Ayomide Lara</h3>
+              <button class="px-2 rounded-xl text-sm border border-color-secondary">Chat with</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Playlist -->
+        <h1 class="text-2xl font-semibold pt-6">Playlist</h1>
+        <div class="w-full gap-6 my-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/playlist/Artboard-22.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/playlist/Artboard-41.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/playlist/Artboard-43.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/playlist/Artboard-47.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+          <div class="border border-2 relative hover-lighten">
+            <img src="./assets/img/Artboard-30.png" alt="">
+            <button class="mr-auto absolute bottom-20 right-4 hidden text-color-white"><i class="fas fa-circle-play text-3xl"></i></button>
+            <div class="bg-color-white p-4">
+              <h3 class="text-xl text-color-text">Sound Wave</h3>
+              <p class="text-sm text-light-text">Heysong</p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+</body>
+</html>
