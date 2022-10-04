@@ -1,5 +1,12 @@
 <template>
   <vee-form @submit="login" :validation-schema="loginSchema">
+    <div
+      v-show="login_show_alert"
+      :class="login_bg_variant"
+      class="text-color-white p-2 my-2 text-center"
+    >
+      {{ login_alert_message }}
+    </div>
     <div class="my-2 flex flex-col gap-2">
       <label for="email" class="text-color-text">Email</label>
       <vee-field
@@ -38,11 +45,32 @@ export default {
         email: "required|email",
         password: "required|min:8",
       },
+      login_in_submission: false,
+      login_show_alert: false,
+      login_bg_variant: "bg-blue-400",
+      login_alert_message: "Login in progress",
     };
   },
   methods: {
-    login(values) {
-      console.log(values);
+    async login(values) {
+      this.login_in_submission = true;
+      this.login_show_alert = true;
+      this.login_bg_variant = "bg-blue-500";
+      this.login_alert_message = "Login in progress";
+      try {
+        await this.$store.dispatch("login", values);
+      } catch (error) {
+        this.login_in_submission = false;
+        this.login_show_alert = true;
+        this.login_bg_variant = "bg-red-500";
+        this.login_alert_message = `Login not successful - ${error.message}`;
+        return;
+      }
+      this.login_in_submission = false;
+      this.login_show_alert = true;
+      this.login_bg_variant = "bg-green-500";
+      this.login_alert_message = "Login was successful";
+      window.location.reload();
     },
   },
 };

@@ -26,9 +26,12 @@ export default {
     defineRule("required", required);
     defineRule("min", min);
     defineRule("max", max);
+    defineRule("alpha_spaces", alphaSpaces);
     defineRule("email", email);
     defineRule("min_value", minVal);
     defineRule("max_value", maxVal);
+    defineRule("excluded", excluded);
+    defineRule("country_excluded", excluded);
     defineRule("password_mismatch", confirmed);
 
     configure({
@@ -50,10 +53,6 @@ export default {
           : `The field ${context.field} is invalid`;
         return message;
       },
-      validateOnBlur: true,
-      validateOnChange: true,
-      validateOnInput: false,
-      validateOnModelUpdate: true,
     });
   },
 };

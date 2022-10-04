@@ -19,7 +19,9 @@
   --color-text: #212529;
   --color-light-text: #888888;
   --color-gray-deep: rgb(55, 65, 81);
-  --color-gray-opacity: rgb(55, 65, 81, 0.6);
+
+  /* --color-black-background: #212529;
+  --color-text-test: #f1f8f9; */
 
   --container-width-lg: 82%;
   --container-width-md: 90%;
@@ -31,7 +33,7 @@
 body {
   font-family: "Segoe UI", Roboto, Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  color: var(--color-text);
+  color: var(--color-text-test);
   line-height: 1.7;
 }
 

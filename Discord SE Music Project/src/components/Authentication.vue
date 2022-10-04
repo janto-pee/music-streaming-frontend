@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 left-0 w-full h-full bg-color-gray-opacity z-30 overflow-y-scroll"
+    class="fixed top-0 left-0 w-full h-full bg-color-gray-deep z-30 overflow-y-scroll"
     :class="{ hidden: !authModal }"
   >
     <div
@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
 import AppRegistration from "./Registration.vue";
 import AppLogin from "./Login.vue";
+import { mapMutations, mapState } from "vuex";
 
 export default {
   name: "Authentication",
@@ -63,3 +63,5 @@ export default {
   },
 };
 </script>
+
+<style></style>
