@@ -91,23 +91,23 @@ We'll be building a fullstack project, therefore we'll be using alot of technolo
 
 ### Project Timeline
 
-* Project Day 1: Figma to template
+* Project milestone 1: Figma to template
 
-* Project Day 2: State management
+* Project milestone 2: State management
 
-* Project Day 3: Form Authentication | Sign In & Sign Up
+* Project milestone 3: Form Authentication | Sign In & Sign Up
 
-* Project Day 4: Vue Router
+* Project milestone 4: Vue Router
 
-* Project Day 5: Music Upload
+* Project milestone 5: Music Upload
 
-* Project Day 6: Fetching Music
+* Project milestone 6: Fetching Music
 
-* Project Day 7: Performance & Optimization
+* Project milestone 7: Performance & Optimization
 
-* Project Day 8: Testing
+* Project milestone 8: Testing
 
-* Project Day 9: Deployment
+* Project milestone 9: Deployment
 
 
 
