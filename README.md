@@ -1,262 +1,403 @@
-<a name="readme-top"></a>
+# Music Streaming Startup - Architecture
+https://dba.stackexchange.com/questions/298690/database-diagram-for-school-management-app
+https://medium.com/@vaibhavkansagara/database-design-of-udemy-66af2d42a03f
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/janto-pee/Music-Streaming-Project">
-    <img src="images/logo.png" alt="Logo" width="160" height="80">
-  </a>
 
-  <h3 align="center">Music Streaming Project</h3>
+## What is Higher Learning Startup (MSP)?
+MSP  is a Web-based service that lets users stream songs to their computers or mobile devices. MSP let users download songs for offline playback as well as allow users to upload their own music collection 
 
-  <p align="center">
-    An enterprise level vuejs project taking you from zero to hero
-    <br />
-    <a href="https://github.com/janto-pee/Music-Streaming-Project"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/janto-pee/Music-Streaming-Project">View Demo</a>
-    ·
-    <a href="https://github.com/janto-pee/Music-Streaming-Project/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/janto-pee/Music-Streaming-Project/issues">Request Feature</a>
-  </p>
-</div>
+ An author’s course display in the listing page and can be seen by the general public (potential students). Courses with high ratings are added to the recommended list. Alternatively, students can register for one or more courses.
 
 
+## How will we design MSP?
+I have divided the design of MSP into four lessons:
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+Requirements: This lesson will put forth the functional and non-functional requirements of MSP.
+Design: This lesson will explain the workflow and usage of each component, API design and database schema.
+Detailed design: In this lesson, we’ll explore the components of our MSP design in detail and discuss various approaches to generate timelines. Moreover, we’ll also evaluate our proposed design.
+Quiz: This lesson will test our understanding of the MSP design.
 
 
+## Requirements
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+We’ll concentrate on some important features of MSP to make this design simple. Let’s list down the requirements for our system:
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+### Functional requirements
+User Management: Enables user registration with unique credentials, robust authentication, and customizable profiles.
+Music Catalog Management: Offers extensive browsing of music artists, albums, genres, and tracks for immersive music exploration.
+Playlist Creation and Management: Allows users to create, edit, and share playlists with customizable privacy settings.
+Like and Favorite Tracking: Lets users express preferences by liking and favoriting tracks, enhancing personalized recommendations.
+Premium Features: Provides advanced functionalities like ad-free listening and exclusive content through subscription plans.
+Subscription Plans: Offers flexible subscription options with varying tiers and pricing to accommodate user preferences.
+Payment Processing: Facilitates secure payment transactions for subscription plans and products, ensuring user privacy and transparency.
 
-![screenshot](../main/images/screenshot2.jpg)
+### Non-functional requirements#
+Scalability: The system should be scalable to handle millions of users in terms of computational resources and storage.
 
-Think of an app like Audiomack or Spotify on the web. In this vuejs project, we'll be building a large-scale Vue application from scratch. you'll master the basics of vuejs and proceed to more advanced concept. This is not a dummy project, this project will be shipped for usage by millions of music lovers. So its a highly scalable enterprise level application. At the end of this project, you'll have mastered all you need to be a top vuejs developer.
+Latency: The latency to generate a course feed should be low.
 
-Here are some things you'll be learning:
-* Vue Essentials: Template Syntax, Reactivity Fundamentals, Computed Properties,Class and Style Bindings, Conditional Rendering, List Rendering, Event Handling, Form Input Bindings, Lifecycle Hooks, Watchers and more..
-* Modular Component structure:  Registration, Props, Events, Fallthrough Attributes, Slots, Provide / inject, Async Components
-* Libraries and Plugins: Webpack, Babel, Eslint, Vee-validate, Firebase...
+Availability: The system should be highly available.
 
-You'll learn how to implement features such as File Uploads, Drag and drop support, Testing, PWAs, Internationalization, Form Authentication with Vue and vee-validate Firebase integration, Firestore, Auth, and Cloud Storage TailwindCSS integration State management Performance and scalablity tradeoffs Routing with Vue Router Testing
+Durability Any uploaded content (photos and videos) should never get lost.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Consistency: We can compromise a little on consistency. It is acceptable if the courses takes time to show in followers’ feeds located in a distant region.
 
+Reliability: The system must be able to tolerate hardware and software failures.
 
 
-### Technologies we'll use
+## Building blocks we will use#
+We’ll focus on the high-level design of MSP. The design will utilize the following building blocks in our design:
 
-We'll be building a fullstack project, therefore we'll be using alot of technologies on both the frontend and backend 
+A load balancer at various layers will ensure smooth requests distribution among available servers.
+A database is used to store the user, students, courses, and accounts metadata and relationship among them.
+Blob storage is needed to store the various types of content such as photos, videos, slides and so on.
+A task scheduler schedules the events on the database such as removing the entries whose time to live exceeds the limit.
+A cache stores the most frequent content related requests.
+CDN is used to effectively deliver content to end-users which reduces delay and burden on end-servers.
 
-* [![Vue][Vue.js]][Vue-url]
-* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-* ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
-* ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
-* ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
-* ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
-* ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-* ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### High-level design
+Our system should allow us to upload, stream songs on their computers or mobile devices at a high level. To stream songs, creators need to upload and store songs and its content, and upon fetching by users, we need to retrieve the data from the storage.
 
-### Project Timeline
+### API design
+This section describes APIs invoked by the users to perform different tasks (upload, like, and view courses, create and take test, view progress,  ) on MSP. We’ll implement REST APIs for these tasks. Let’s develop APIs for each of the following features:
 
-* Project milestone 1: Figma to template
 
-* Project milestone 2: State management
+    Upload music
+    Stream song
+    Search songs
+    Create paylists
+    Like or dislike songs
+    Comment on songs
+    review artist
 
-* Project milestone 3: Form Authentication | Sign In & Sign Up
 
-* Project milestone 4: Vue Router
 
-* Project milestone 5: Music Upload
+All of the following calls will have a userID, that uniquely specifies the user performing the action. We’ll only discuss new parameters in the calls.
 
-* Project milestone 6: Fetching Music
+#### Upload track
+The POST method is used to upload song to the server from the user through the /postSong API. The /postSong API is as follows:
 
-* Project milestone 7: Performance & Optimization
+postTrack(userID (ArtistID), Title, ArtistID, AlbumID, Duration, ReleaseDate)
 
-* Project milestone 8: Testing
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| Title         | It indicates the type of course content. content could be video, pdf or slides.   |
+| ArtistID                | The ID of the artist            |
+| AlbumID                | The track album             |
+| Duration               | The total time of the track              |
+| Release               | the track release date            |
 
-* Project milestone 9: Deployment
 
+#### Search track
+The GET method is used to get track from the server through the /searchTrack API. The /searchTrack API is as follows:
 
+searchTrack(keyword)
 
-<!-- GETTING STARTED -->
-## Getting Started
-Join project on discord: https://discord.gg/gmEQjRdj
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| keyword               | keyword could be title of course, category or caption        |
 
-We'll be using Vite to scaffold our app. Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 
-### Prerequisites
+#### Create Playlist
+The POST method is used to post Playlist to the server from the user through the /postPlaylist API. The /postPlaylist API is as follows:
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm init vue@latest
-  ```
+postPlaylist(userID, track_id, playlist_name, playlist_comment)
 
-### Installation
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| playlist_name        | The name of playlist   |
+| playlist_comment             | The description of playlist             |
 
-_Below are steps on how to run your first vue development server._
 
-1. Start with [vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) or
-2. Clone the repo
-   ```sh
-   git clone https://github.com/janto-pee/Music-Streaming-Project"
-   ```
-3. Install all packages
-   ```sh
-   npm install
-   ```
-4. Start `development server`
-   ```sh
-   npm run dev
-   ```
+#### Add Track to Playlist
+The POST method is used to add Track to users wishlist through the /postTrackPlaylist API. The /postTrackPlaylist API is as follows:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+postTrackPlaylist(userID, track_id, playlist_id)
 
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| track_id         | the id of the track   |
+| playlist_id              | the unique id of the playlist              |
 
 
-<!-- USAGE EXAMPLES -->
-## Duration
+#### Create Review
+The POST method is used to post Review to the server from the user through the /postReview API. The /postReview API is as follows:
 
-This project will commence on the 11th of September and be completed by 21st of same month. All resources will be made accessible to everyone.
+postReview(userID, track_id, rating, review_topic, review_text)
 
-_For more details, Dont hesitate to contact me [Linkedin](https://linkedin.com/in/adejumo-ayobami-347bb9227)_
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| track_id         | the id of the track.   |
+| rating                | Title of each sub topic               |
+| review_topic                | Title of review              |
+| review_text              | User comment for the purchased course             |
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-Project link: https://discord.gg/gmEQjRdj
 
+#### View Review
+The GET method is used to get Review from the server through the /getReview API. The /getReview API is as follows:
 
+getReview(userID, track_id, reviewID)
 
-<!-- ROADMAP -->
-## Roadmap
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| track_id         | The unique ID of the course   |
+| reviewID                | the specific ID for each review             |
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+<!-- 
+#### View User Progres (Tracking)
+The POST method is used to post photos/videos to the server from the user through the /postCourse API. The /postCourse API is as follows:
+
+getProgress(userID, track_id)
+
+| Parameter | Description |
+| ---------------------------------- | ---------------------------------- |
+| track_id         | The unique ID of the course   |
+ -->
+
+
+
+## Storage schema
+Let’s define our data model now:
+
+Relational or non-relational database#
+It is essential to choose the right kind of database for our MSP system, but which is the right choice — SQL or NoSQL? Our data is inherently relational, and we need an order for the data (posts should appear in chronological order) and no data loss even in case of failures (data durability). Moreover, in our case, we would benefit from relational queries like fetching the followers or images based on a user ID. Hence, SQL-based databases fulfill these requirements.
+
+So, we’ll opt for a relational database and store our relevant data in that database.
+
+### Define tables#
+On a basic level, we need the following tables:
+
+Users: This stores all user-related data such as ID, name, email, bio, location, date of account creation, time of the last login, and so on.
+
+album: This stores the relations of the albums. Each track can belong to an album and albums can have many track
+
+track: This stores all music-related information such as title, duration, caption, time of creation, and so on. We also need to keep the user ID to determine which song belongs to which user. The user ID is a foreign key from the users table.
+
+playlist: This stores a list of tracks. We also need to keep the user ID to determine which video belongs to which user. The user ID is a foreign key from the users table.
+
+likes: This stores the amount of time different users click the like button. This is useful for the machine learning recommendation algorithm. We also need to keep the user ID to determine which video belongs to which user. The user ID is a foreign key from the users table.
+
+premium features: This stores the names of all premium features
+
+subscription:  The stores all subscription services such as the name, price and more.
+
+
+### 1. User: Stores information about registered users.
+UserID (Primary Key): It is a unique Identifier for each user.
+Username: Username of the user.
+Email: Email of the user.
+Password: Password of the user.
+2. Artist: Contains details about music artists.
+ArtistID (Primary Key): Unique Identifier for each artist.
+Name: Name of the artist.
+Genre: Genre of the artist.
+3. Album: Represents music albums.
+AlbumID (Primary Key): Unique Identifier for each album.
+Title: Title of the album.
+ArtistID (Foreign Key): Reference to the artist.
+Genre: Genre of the album.
+Release Date: Release date of the album.
+4. Track: Stores details about individual songs.
+TrackID (Primary Key): Unique Identifier for each track.
+track
+Title: Title of the track.
+ArtistID (Foreign Key): Reference to the artist.
+AlbumID (Foreign Key): Reference to the album.
+Duration: Duration of the track.
+Release Date: Release date of the track.
+5. Playlist: Represents a collection of tracks curated by a user.
+PlaylistID (Primary Key): Unique Identifier for each playlist.
+UserID (Foreign Key): Reference to the user.
+Title: Title of the playlist.
+Creation Date: Creation date of the playlist.
+6. Like: Tracks the likes or favorites of users on tracks.
+LikeID (Primary Key): Unique Identifier for each like.
+UserID (Foreign Key): Reference to the user.
+TrackID (Foreign Key): Reference to the track.
+7. Premium Feature: Stores information about premium features available to users.
+Premium_Feature_ID (Primary Key): Unique Identifier for each premium feature.
+Name: Name of the premium feature.
+8. Subscription Plan: Contains details about subscription plans offered by the platform.
+Subscription_Plan_ID (Primary Key): Unique Identifier for each subscription plan.
+Name: Name of the subscription plan.
+Price: Price of the subscription plan.
+Description: Description of the subscription plan.
+9. Payment: Stores information about payments made by users.
+Payment_ID (Primary Key): Unique Identifier for each payment.
+User_ID (Foreign Key): Reference to the user.
+Amount: Amount of the payment.
+Date: Date of the payment
+Method: Method by which the payment is done.
+
+
+
+### Relationships between These Entities
+1. User-Playlist Relationship
+Each user can create multiple playlists (One-to-Many).
+A user is associated with playlists through the UserID foreign key in the Playlist table.
+2. Artist-Album Relationship
+An artist can have multiple albums (One-to-Many).
+Each album is associated with an artist through the ArtistID foreign key in the Album table.
+3. Album-Track Relationship
+An album can contain multiple tracks (One-to-Many).
+Each track belongs to an album through the AlbumID foreign key in the Track table.
+4. Track-Playlist Relationship
+Each track can be part of multiple playlist and a playlist can contain multiple tracks which signifies the Many-to-Many relationship.
+This relationship is realized through a junction table (Track-Playlist) that stores associations between tracks and playlists.
+5. User-Premium Feature Relationship
+Each user can have access to multiple premium features, and each premium feature can be associated with multiple users (Many-to-Many).
+6. User – Subscription Plan Relationship
+Each user can subscribe to multiple subscription plans, and each subscription plan can be subscribed to by multiple users (Many-to-Many).
+7. User – Payment Relationship
+Each user can make multiple payments, and each payment is made by one user (One-to-Many).
+UserID in the User table relates to UserID in the Payment table.
 
-See the [open issues](https://github.com/janto-pee/Music-Streaming-Project/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+CREATE TABLE User (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(255),
+    Email VARCHAR(255),
+    Password VARCHAR(255)
+);
 
+CREATE TABLE Artist (
+    ArtistID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Genre VARCHAR(255)
+);
 
+CREATE TABLE Album (
+    AlbumID INT PRIMARY KEY,
+    Title VARCHAR(255),
+    ArtistID INT,
+    Genre VARCHAR(255),
+    ReleaseDate DATE,
+    FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID)
+);
 
-<!-- CONTRIBUTING -->
-## Contributing
+CREATE TABLE Track (
+    TrackID INT PRIMARY KEY,
+    Title VARCHAR(255),
+    ArtistID INT,
+    AlbumID INT,
+    Duration TIME,
+    ReleaseDate DATE,
+    FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID),
+    FOREIGN KEY (AlbumID) REFERENCES Album(AlbumID)
+);
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+CREATE TABLE Playlist (
+    PlaylistID INT PRIMARY KEY,
+    UserID INT,
+    Title VARCHAR(255),
+    CreationDate DATE,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+CREATE TABLE Like (
+    LikeID INT PRIMARY KEY,
+    UserID INT,
+    TrackID INT,
+    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (TrackID) REFERENCES Track(TrackID)
+);
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+CREATE TABLE PremiumFeature (
+    Premium_Feature_ID INT PRIMARY KEY,
+    Name VARCHAR(255)
+);
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+CREATE TABLE SubscriptionPlan (
+    Subscription_Plan_ID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Price DECIMAL(10,2),
+    Description TEXT
+);
 
+CREATE TABLE Payment (
+    Payment_ID INT PRIMARY KEY,
+    User_ID INT,
+    Amount DECIMAL(10,2),
+    Date DATE,
+    Method VARCHAR(50),
+    FOREIGN KEY (User_ID) REFERENCES User(UserID)
+);
 
 
-<!-- LICENSE -->
-## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- CONTACT -->
-## Contact
 
-Adejumo Ayobami - [Linkedin](https://linkedin.com/in/adejumo-ayobami-347bb9227) - ayobami_adejumo@yahoo.com
 
-Project Link: [https://github.com/janto-pee/Music-Streaming-Project](https://github.com/janto-pee/Music-Streaming-Project)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Detailed Design
 
+### Add more components
+Let’s add a few more components to our design:
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/janto-pee/Music-Streaming-Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/janto-pee/Music-Streaming-Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/janto-pee/Music-Streaming-Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/janto-pee/Music-Streaming-Project/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/janto-pee/Music-Streaming-Project/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+Load balancer: To balance the load of the requests from the end-users.
+
+Application servers: To host our service to the end-users.
+
+Relational database: To store our data.
+
+Blob storage: To store the photos and videos uploaded by the users.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+## Higher Learning Startup - DevOps 
+- Time it takes for building multiple environments
+- Issues we face with different environments
+- Scale-Up and Scale-Down On-Demand
+
+## Higher Learning Startup - DevOps 
+- Visibility
+- Stability
+- Scalability
+- Security
+- Audit
+
+## Higher Learning Startup - Backend
+- Time it takes for building multiple environments
+- Issues we face with different environments
+- Scale-Up and Scale-Down On-Demand
+
+## Higher Learning Startup - Frontend
+- Visibility
+- Stability
+- Scalability
+- Security
+- Audit -->
