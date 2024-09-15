@@ -1,0 +1,60 @@
+// FONT FACE --
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  src: url("../fonts/DM_Sans/static/DMSans-Light.ttf");
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  src: url("../fonts/DM_Sans/static/DMSans_36pt-Regular.ttf");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  src: url("../fonts/DM_Sans/static/DMSans-Medium.ttf");
+  font-optical-sizing: auto;
+}
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  src: url("../fonts/DM_Sans/static/DMSans-SemiBold.ttf");
+  font-optical-sizing: auto;
+}
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  src: url("../fonts/DM_Sans/static/DMSans-Bold.ttf");
+  font-optical-sizing: auto;
+}
+
+html body {
+  @apply font-body antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+}
+
+:root {
+  --font-display: DM Sans;
+  --font-body: DM Sans;
+}
+
+.theme-animals {
+  --font-display: DM Sans
+  --font-body: DM Sans
+}
+
+.theme-astronomy {
+  --font-display: DM Sans;
+  --font-body: DM Sans;
+}

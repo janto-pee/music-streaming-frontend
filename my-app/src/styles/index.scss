@@ -1,0 +1,9 @@
+@import "./_theme_colors";
+// @import "./_theme_font";
+
+//
+.mega-menu {
+  li.current a {
+    color: var(--primary-color) !important;
+  }
+}
